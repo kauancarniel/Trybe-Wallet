@@ -1,6 +1,6 @@
-const innitialState = { email: '' };
+const initialState = { email: 'atumalaca' };
 
-const user = (state = innitialState, action) => {
+const user = (state = initialState, action) => {
   switch (action.type) {
   case 'addEmail':
     return { ...state, email: action.em };
