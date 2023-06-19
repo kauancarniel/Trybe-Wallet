@@ -1,1 +1,4 @@
-// Coloque aqui suas actions
+export const addEmail = (payload) => ({
+  type: 'addEmail',
+  payload,
+});
