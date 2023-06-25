@@ -26,6 +26,7 @@ describe('7 - Implemente a lógica para que a tabela seja alimentada pelo estado
     cy.get('tbody tr').each((row, index) => {
       cy.wrap(expectedTableRows[index]).each((expectedValue) => {
         cy.get(row).find('td').contains(expectedValue);
+        console.log(expectedValue);
       });
     });
   });
