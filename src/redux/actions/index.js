@@ -3,19 +3,26 @@ export const addEmail = (payload) => ({
   payload,
 });
 
-export const saveCurrencies = (payload) => ({
+export const saveCurrencies = (payload, payload2) => ({
   type: 'saveCurrencies',
+  payload,
+  payload2,
+});
+
+export const isFetching = (payload) => ({
+  type: 'fetching',
   payload,
 });
 
 export function fetchCurrencies() {
   return (dispatch) => {
+    dispatch(isFetching(true));
     const endpoint = 'https://economia.awesomeapi.com.br/json/all';
     fetch(endpoint).then((response) => response.json())
       .then((data) => {
         const keys = Object.keys(data);
         keys.splice(1, 1);
-        dispatch(saveCurrencies(keys));
+        dispatch(saveCurrencies(keys, data));
       });
   };
 }
@@ -28,3 +35,8 @@ export function fetchCurrencies() {
 //     dispatch(saveCurrencies(data.USDT))
 //   }
 // };
+
+export const saveExpenses = (payload) => ({
+  type: 'addExpenses',
+  payload,
+});

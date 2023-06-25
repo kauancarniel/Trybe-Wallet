@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { addEmail, fetchCurrencies } from '../redux/actions';
+import { addEmail } from '../redux/actions';
 
 const validateEmailRegex = /^\S+@\S+\.\S+$/;
 const min = 6;
@@ -13,11 +13,6 @@ class Login extends React.Component {
     buttonDis: true,
 
   };
-
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchCurrencies());
-  }
 
   onchange = ({ target }) => {
     if (target.name === 'validEmail') email = target.value;
