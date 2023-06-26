@@ -146,9 +146,13 @@ class Table extends Component {
 }
 
 Table.propTypes = {
+  currencies: PropTypes.shape({
+    map: PropTypes.func,
+  }).isRequired,
   dispatch: PropTypes.func.isRequired,
   expenses: PropTypes.shape({
     filter: PropTypes.func,
+    find: PropTypes.func,
     length: PropTypes.number,
     map: PropTypes.func,
   }).isRequired,

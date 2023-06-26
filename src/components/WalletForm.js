@@ -89,8 +89,9 @@ WalletForm.propTypes = {
     map: PropTypes.func,
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
+  editing: PropTypes.bool.isRequired,
   fetching: PropTypes.bool.isRequired,
-  quotation: PropTypes.objectOf.isRequired,
+  quotation: PropTypes.objectOf().isRequired,
 };
 
 const mapStateToProps = (state) => ({
