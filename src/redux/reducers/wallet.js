@@ -3,6 +3,7 @@ const initialState = {
   currencies: [],
   expenses: [],
   fetching: true,
+  editing: false,
 };
 
 const wallet = (state = initialState, action) => {
@@ -16,6 +17,10 @@ const wallet = (state = initialState, action) => {
     return { ...state, expenses: [...state.expenses, action.payload] };
   case 'fetching':
     return { ...state, fetching: action.payload };
+  case 'exclExpense':
+    return { ...state, expenses: action.payload };
+  case 'editing':
+    return { ...state, editing: !state.editing };
   default:
     return state;
   }

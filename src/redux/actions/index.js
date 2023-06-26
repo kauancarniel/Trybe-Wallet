@@ -40,3 +40,8 @@ export const saveExpenses = (payload) => ({
   type: 'addExpenses',
   payload,
 });
+
+export const exclExpense = (payload) => ({
+  type: 'exclExpense',
+  payload,
+});

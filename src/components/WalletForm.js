@@ -39,10 +39,10 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies, fetching } = this.props;
+    const { currencies, fetching, editing } = this.props;
     return (
       <div>
-        {fetching ? <p>Carregando...</p>
+        {editing || fetching === true ? <p>Carregando...</p>
           : (
             <div>
               <input
@@ -97,6 +97,7 @@ const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
   fetching: state.wallet.fetching,
   quotation: state.wallet.fetchObject,
+  editing: state.wallet.editing,
 });
 
 export default connect(mapStateToProps)(WalletForm);
