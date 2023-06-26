@@ -67,8 +67,8 @@ class Table extends Component {
                 <th>Moeda de conversão</th>
                 <th>Editar/Excluir</th>
               </thead>
-              {expenses.map((obj, key) => (
-                <tbody key={ key }>
+              {expenses.map((obj) => (
+                <tbody key={ obj.id }>
                   <tr>
                     <td>{obj.description}</td>
                     <td>{obj.tag}</td>
